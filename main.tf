@@ -24,6 +24,7 @@ resource "aws_route53_record" "record" {
 
 module "vpc" {
   source = "./modules/vpc"
+
   availability_zones     = var.availability_zones
   backend_subnets        = var.backend_subnets
   db_subnets             = var.db_subnets
@@ -34,4 +35,18 @@ module "vpc" {
   frontend_subnets       = var.frontend_subnets
   public_subnets         = var.public_subnets
   vpc_cidr_block         = var.vpc_cidr_block
+}
+
+module "docdb" {
+  source = "./modules/docdb"
+
+  env                     = var.env
+  family                  = var.docdb_family
+  instance_class          = var.docdb_instance_class
+  instance_count          = var.docdb_instance_count
+  master_password         = "admin1"
+  master_username         = "Roboshop12345"
+  server_app_port_sg_cidr = var.backend_subnets
+  subnet_ids              = module.vpc.db_subnets
+  vpc_id                  = module.vpc.vpc_id
 }
