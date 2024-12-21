@@ -12,3 +12,4 @@ variable "master_password" {}
 
 variable "instance_class" {}
 variable "instance_count" {}
+variable "engine_version" {}

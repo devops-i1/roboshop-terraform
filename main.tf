@@ -14,7 +14,7 @@ resource "aws_instance" "instance" {
 }
 
 resource "aws_route53_record" "record" {
-  count         = length(var.components)
+  count   = length(var.components)
   name    = var.components[count.index]
   type    = "A"
   zone_id = "Z08716401XK2LTO5VD1E1"
@@ -44,6 +44,7 @@ module "docdb" {
   family                  = var.docdb_family
   instance_class          = var.docdb_instance_class
   instance_count          = var.docdb_instance_count
+  engine_version          = var.docdb_engine_version
   master_password         = "Roboshop12345"
   master_username         = "admin1"
   server_app_port_sg_cidr = var.backend_subnets
