@@ -18,6 +18,7 @@ prometheus_nodes   = ["172.31.82.247/32"]
 certificate_arn    = "arn:aws:acm:us-east-1:835817189095:certificate/4fde49bf-b032-44b4-a050-672e4d960903"
 kms_key_id         = "arn:aws:kms:us-east-1:835817189095:key/cd4d14b0-2220-48ce-8890-5a32c44d3615"
 
+
 #ASG
 max_capacity = 5
 min_capacity = 1
@@ -41,5 +42,13 @@ rds = {
     instance_class          = "db.t3.micro"
     skip_final_snapshot     = true
     storage_type            = "gp3"
+  }
+}
+
+#rabbitmq
+rabbitmq = {
+  main = {
+    component     = "rabbitmq"
+    instance_type = "t3.small"
   }
 }

@@ -17,3 +17,8 @@ variable "rds" {}
 
 variable "vault_token" {}
 variable "kms_key_id" {}
+
+#rabbitmq
+variable "rabbitmq" {}
+variable "bastion_nodes" {}
+variable "prometheus_nodes" {}
