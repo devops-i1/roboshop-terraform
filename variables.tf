@@ -10,15 +10,18 @@ variable "frontend_subnets" {}
 variable "public_subnets" {}
 variable "vpc_cidr_block" {}
 
-#docdb
+
+
 variable "docdb" {}
-#rds
 variable "rds" {}
+variable "rabbitmq" {}
+variable "elasticache" {}
 
 variable "vault_token" {}
 variable "kms_key_id" {}
 
 #rabbitmq
-variable "rabbitmq" {}
 variable "bastion_nodes" {}
 variable "prometheus_nodes" {}
+
+#elasticache

@@ -23,7 +23,8 @@ kms_key_id         = "arn:aws:kms:us-east-1:835817189095:key/cd4d14b0-2220-48ce-
 max_capacity = 5
 min_capacity = 1
 
-#docdbb
+
+
 docdb = {
   main = {
     family                  = "docdb4.0"
@@ -33,7 +34,6 @@ docdb = {
   }
 }
 
-#rds
 rds = {
   main = {
     allocated_storage       = 20
@@ -45,10 +45,17 @@ rds = {
   }
 }
 
-#rabbitmq
 rabbitmq = {
   main = {
     component     = "rabbitmq"
     instance_type = "t3.small"
+  }
+}
+
+elasticache = {
+  main = {
+    engine_version          = "6.2"
+    family                  = "redis6.x"
+    node_type               = "cache.t4g.micro"
   }
 }
