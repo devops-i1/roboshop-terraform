@@ -23,5 +23,4 @@ variable "kms_key_id" {}
 #rabbitmq
 variable "bastion_nodes" {}
 variable "prometheus_nodes" {}
-
-#elasticache
+variable "zone_id" {}
